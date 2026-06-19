@@ -7,7 +7,7 @@ public class TrackGenerator : MonoBehaviour
     [Header("Track Info")]
     public int trackLength;
     public Vector3 spawnPos = new Vector3(0, 0, 0);
-    private GameObject[] allTracks;
+    public GameObject[] allTracks;
     private List<GameObject> southEntranceTracks = new List<GameObject>();
     private List<GameObject> eastEntranceTracks = new List<GameObject>();
     private List<GameObject> westEntranceTracks = new List<GameObject>();
