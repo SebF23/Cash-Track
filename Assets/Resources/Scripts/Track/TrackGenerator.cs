@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class TrackGenerator : MonoBehaviour
 {
@@ -14,14 +15,17 @@ public class TrackGenerator : MonoBehaviour
     private List<GameObject> northEntranceTracks = new List<GameObject>();
     public bool isFinished;
 
-    [Header("Other")]
+    [Header("Spawning")]
     private float spawnOffest;
-    public GameObject nextTrackObject;
+    private GameObject nextTrackObject;
     private TrackSegment trackSegment;
-    private Unity.Mathematics.Random random = new Unity.Mathematics.Random();
+    private int listCount;
+    private int trackSelection;
     
     private void Awake()
     {
+        trackLength = 10; //for testing purposes
+
         spawnOffest = 50f;
         transform.position = new Vector3(0,0,0);
         isFinished = false;
@@ -40,21 +44,50 @@ public class TrackGenerator : MonoBehaviour
     
         for(int i = 0; i < trackLength; i++)
         {
-            //
+            nextTrackObject = chooseNextTrack(nextTrackObject);
+            if(!nextTrackObject){break;}
+            Instantiate(nextTrackObject, spawnPos, quaternion.identity);
         }
     }
 
     private GameObject chooseFirstTrack()
     {
-        int count = southEntranceTracks.Count;
-        int trackSelection = random.NextInt(0, count);
+        listCount = southEntranceTracks.Count;
+        trackSelection = Random.Range(0, listCount);
         return southEntranceTracks[trackSelection];
     }
 
     private GameObject chooseNextTrack(GameObject currTrack)
     {
         trackSegment = currTrack.GetComponent<TrackSegment>();
-        return null;
+
+        switch (trackSegment.exitDirection)
+            {
+                case TrackSegment.Direction.North: //exits north so we enter from the south
+                listCount = southEntranceTracks.Count;
+                trackSelection = Random.Range(0, listCount);
+                spawnPos.z += spawnOffest; //move north
+                return southEntranceTracks[trackSelection];
+
+                case TrackSegment.Direction.East: //exits east so we enter from the west
+                listCount = westEntranceTracks.Count;
+                trackSelection = Random.Range(0, listCount);
+                spawnPos.x += spawnOffest; //move east
+                return westEntranceTracks[trackSelection];
+
+                case TrackSegment.Direction.South: //exits south so we enter from the north
+                listCount = northEntranceTracks.Count;
+                trackSelection = Random.Range(0, listCount);
+                spawnPos.z -= spawnOffest; //move south
+                return northEntranceTracks[trackSelection];
+
+                case TrackSegment.Direction.West: //exits west so we enter from the east
+                listCount = eastEntranceTracks.Count;
+                trackSelection = Random.Range(0, listCount);
+                spawnPos.x -= spawnOffest; //move east
+                return eastEntranceTracks[trackSelection];
+            }
+            return null;
     }
 
     private void loadPrefabs()
