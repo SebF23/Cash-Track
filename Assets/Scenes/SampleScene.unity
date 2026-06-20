@@ -180,7 +180,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 563251878}
@@ -196,8 +196,8 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 112278715}
   serializedVersion: 5
-  m_Mass: 1500
-  m_LinearDamping: 0
+  m_Mass: 2000
+  m_LinearDamping: 0.05
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -213,7 +213,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 64
   m_CollisionDetection: 0
 --- !u!114 &112278718
 MonoBehaviour:
@@ -244,7 +244,7 @@ MonoBehaviour:
   wheel2: {fileID: 657277453}
   wheel3: {fileID: 1107956003}
   wheel4: {fileID: 2084395051}
-  driveSpeed: 600
+  driveSpeed: 1500
   steerSpeed: 20
 --- !u!1 &262452415
 GameObject:
