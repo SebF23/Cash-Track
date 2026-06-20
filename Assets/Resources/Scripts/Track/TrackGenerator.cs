@@ -21,10 +21,11 @@ public class TrackGenerator : MonoBehaviour
     private TrackSegment trackSegment;
     private int listCount;
     private int trackSelection;
+    public Transform trackFolder;
     
     private void Awake()
     {
-        trackLength = 10; //for testing purposes
+        trackLength = 50; //for testing purposes
 
         spawnOffest = 50f;
         transform.position = new Vector3(0,0,0);
@@ -46,7 +47,7 @@ public class TrackGenerator : MonoBehaviour
         {
             nextTrackObject = chooseNextTrack(nextTrackObject);
             if(!nextTrackObject){break;}
-            Instantiate(nextTrackObject, spawnPos, quaternion.identity);
+            Instantiate(nextTrackObject, spawnPos, quaternion.identity, trackFolder);
         }
     }
 

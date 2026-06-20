@@ -1337,6 +1337,7 @@ MonoBehaviour:
   spawnPos: {x: 0, y: 0, z: 0}
   allTracks: []
   isFinished: 0
+  trackFolder: {fileID: 1881459064}
 --- !u!64 &1749703539
 MeshCollider:
   m_ObjectHideFlags: 0
