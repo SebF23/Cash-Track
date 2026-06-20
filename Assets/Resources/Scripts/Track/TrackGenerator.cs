@@ -18,6 +18,7 @@ public class TrackGenerator : MonoBehaviour
     private float spawnOffest;
     public GameObject nextTrackObject;
     private TrackSegment trackSegment;
+    private Unity.Mathematics.Random random = new Unity.Mathematics.Random();
     
     private void Awake()
     {
@@ -45,9 +46,9 @@ public class TrackGenerator : MonoBehaviour
 
     private GameObject chooseFirstTrack()
     {
-        // GameObject firstTrack;
-
-        return southEntranceTracks[0];
+        int count = southEntranceTracks.Count;
+        int trackSelection = random.NextInt(0, count);
+        return southEntranceTracks[trackSelection];
     }
 
     private GameObject chooseNextTrack(GameObject currTrack)
