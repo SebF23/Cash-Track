@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public static Player instance {get; private set;}
     public Car playerCar;
 
     [Header("Player Stats")]

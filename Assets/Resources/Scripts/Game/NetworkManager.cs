@@ -1,16 +1,20 @@
+using NUnit.Framework.Internal;
 using UnityEngine;
 
 public class NetworkManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public int maxPlayerCount = 4;
+    public static NetworkManager instance {get; private set;}
+    public struct playerStats
     {
-        
+        public string name;
+        public int money;
+        public Car playerCar;
+        public int playerRacePosition;
     }
 
-    // Update is called once per frame
-    void Update()
+    void Awake()
     {
-        
+        playerStats[] players = new playerStats[maxPlayerCount]; //0 for host
     }
 }
