@@ -9,7 +9,7 @@ public class NetworkManager : MonoBehaviour
     {
         public string name;
         public int money;
-        public Car playerCar;
+        // public Car playerCar;
         public int playerRacePosition;
     }
 

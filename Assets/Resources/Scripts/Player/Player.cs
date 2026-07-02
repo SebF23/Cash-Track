@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public Car playerCar;
+    // public Car playerCar;
 
     [Header("Player Stats")]
     public int money;

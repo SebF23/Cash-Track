@@ -465,6 +465,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1958334509268686320, guid: 251e32c7f242c8d4b86bff8a4c3b0a15, type: 3}
+      propertyPath: brakeForce
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958334509268686320, guid: 251e32c7f242c8d4b86bff8a4c3b0a15, type: 3}
+      propertyPath: motorForce
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958334509268686320, guid: 251e32c7f242c8d4b86bff8a4c3b0a15, type: 3}
+      propertyPath: maxSteerAngle
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 3227629787306322220, guid: 251e32c7f242c8d4b86bff8a4c3b0a15, type: 3}
       propertyPath: m_Name
       value: Player Car
@@ -473,9 +485,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3395529308475653674, guid: 251e32c7f242c8d4b86bff8a4c3b0a15, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3431589954694341744, guid: 251e32c7f242c8d4b86bff8a4c3b0a15, type: 3}
       propertyPath: m_Name
       value: Camera Pivot
+      objectReference: {fileID: 0}
+    - target: {fileID: 3441031484021818925, guid: 251e32c7f242c8d4b86bff8a4c3b0a15, type: 3}
+      propertyPath: m_LinearDamping
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 7063502887478523693, guid: 251e32c7f242c8d4b86bff8a4c3b0a15, type: 3}
       propertyPath: m_LocalPosition.x
@@ -483,7 +503,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7063502887478523693, guid: 251e32c7f242c8d4b86bff8a4c3b0a15, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7063502887478523693, guid: 251e32c7f242c8d4b86bff8a4c3b0a15, type: 3}
       propertyPath: m_LocalPosition.z
